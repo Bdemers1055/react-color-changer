@@ -22,11 +22,11 @@ class App extends Component {
   render() {
     const styles = { backgroundColor: this.state.color }
     return (
-      <div>
+      <div className = "center" >
       <div className = "box" style = {styles} >
       </div>
-      <button onClick={ this.changeColorGreen.bind(this) }>Green</button>
-      <button onClick={ this.changeColorRed.bind(this) }>Red</button>      
+      <button className = "left" onClick={ this.changeColorGreen.bind(this) }>Green</button>
+      <button className = "right" onClick={ this.changeColorRed.bind(this) }>Red</button>      
       </div>
     );
   }
