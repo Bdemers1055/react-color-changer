@@ -5,28 +5,28 @@ class Colorchanger extends Component {
         super(props);
         this.state = {
             color: '#ffff00',
-            firstColor: '#000678',
-            secondColor: '#455678'
+            inputLeftColor: '#000678',
+            inputRightColor: '#455678'
         };
     }
-    changeFirstColor(e){
+    changeInputLeftColor(e){
         this.setState({
-            firstColor: e.target.value
+            inputLeftColor: e.target.value
         });
     }
-    changeSecondColor(e){
+    changeInputRightColor(e){
         this.setState({
-            secondColor: e.target.value
+            inputRightColor: e.target.value
         });
     }
-    changeColor(e){
+    changeBoxToLeftColor(e){
         this.setState({
-            color: this.state.firstColor,
+            color: this.state.inputLeftColor,
         })
     }
-    changeToSecondColor(e){
+    changeBoxToRightColor(e){
         this.setState({
-            color: this.state.secondColor,
+            color: this.state.inputRightColor,
         })
     }
     render() {
@@ -35,22 +35,26 @@ class Colorchanger extends Component {
             <div className = "center" >
             {this.props.title? <h1 className= "Color-title">{this.props.title}</h1> : null}
             <div className = "box" style = { styles } ></div>
-            <button className = "first" onClick = {this.changeColor.bind(this)}>First</button>
-            <button className = "second" onClick = {this.changeToSecondColor.bind(this)}>Second</button>
-            <input 
-            type="text" 
-            name="firstfield"
-            placeholder="#000000"
-            value={this.state.firstColor}
-            onChange={this.changeFirstColor.bind(this)}
-            />
-            <input 
-            type="text" 
-            name="secondfield"
-            placeholder="#000000"
-            value={this.state.secondColor}
-            onChange={this.changeSecondColor.bind(this)}
-            />
+                <div className= "left">
+                    <input 
+                    type="text" 
+                    name="leftfield"
+                    placeholder="#000000"
+                    value={this.state.inputLeftColor}
+                    onChange={this.changeInputLeftColor.bind(this)}
+                    />
+                    <button className = "leftbtn" onClick = {this.changeBoxToLeftColor.bind(this)}>Left</button>
+                </div>
+                <div className= "right">
+                    <input 
+                    type="text" 
+                    name="rightfield"
+                    placeholder="#000000"
+                    value={this.state.inputRightColor}
+                    onChange={this.changeInputRightColor.bind(this)}
+                    />
+                    <button className = "rightbtn" onClick = {this.changeBoxToRightColor.bind(this)}>Right</button>
+                </div>
             </div>
         )
     }
