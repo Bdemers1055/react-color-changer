@@ -14,22 +14,14 @@
   margin-right: auto;
 }
 
-.left, .right {
-  color: white;
+.first, .second {
+  background-color: #222;
+  color: #ffff;
   font-size: 1rem;
   font-family: 'open-sans', sans-serif;
   width: 150px;
   height: 50px;
   border: none;
-}
-
-.left {
-  background-color: green;
-}
-
-.right {
-  background-color: red;
-  float: right;
 }
 
 .App {

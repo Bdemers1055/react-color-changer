@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
   <div>
-  <Colorchanger />
+  <Colorchanger title="Change my color!" />
   </div>
     )
   };
